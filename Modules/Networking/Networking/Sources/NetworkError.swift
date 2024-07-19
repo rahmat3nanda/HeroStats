@@ -16,3 +16,13 @@ public enum NetworkError: Error {
     case invalidData
     case response(NetworkErrorResponse)
 }
+
+extension NetworkError: LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+        case .connectivity: return "Tidak ada koneksi internet"
+        case .invalidData: return "Gagal memuat data"
+        case .response(let networkErrorResponse): return networkErrorResponse.error ?? "Terjadi Kesalahan"
+        }
+    }
+}
