@@ -12,6 +12,7 @@
 		AF3E4DEA2C4A703D00C942F2 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4DE92C4A703D00C942F2 /* URLSessionHTTPClient.swift */; };
 		AF3E4DF82C4A75E200C942F2 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4DF72C4A75E200C942F2 /* APIConstants.swift */; };
 		AF3E4E0C2C4A7B8F00C942F2 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4E0B2C4A7B8F00C942F2 /* NetworkError.swift */; };
+		AF3E4E2E2C4ABEE100C942F2 /* ReachabilityNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4E2D2C4ABEE100C942F2 /* ReachabilityNetwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		AF3E4DE92C4A703D00C942F2 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		AF3E4DF72C4A75E200C942F2 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		AF3E4E0B2C4A7B8F00C942F2 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		AF3E4E2D2C4ABEE100C942F2 /* ReachabilityNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityNetwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				AF3E4DE72C4A700400C942F2 /* HTPPClient.swift */,
 				AF3E4DE92C4A703D00C942F2 /* URLSessionHTTPClient.swift */,
 				AF3E4E0B2C4A7B8F00C942F2 /* NetworkError.swift */,
+				AF3E4E2D2C4ABEE100C942F2 /* ReachabilityNetwork.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				AF3E4DE82C4A700400C942F2 /* HTPPClient.swift in Sources */,
 				AF3E4E0C2C4A7B8F00C942F2 /* NetworkError.swift in Sources */,
 				AF3E4DEA2C4A703D00C942F2 /* URLSessionHTTPClient.swift in Sources */,
+				AF3E4E2E2C4ABEE100C942F2 /* ReachabilityNetwork.swift in Sources */,
 				AF3E4DF82C4A75E200C942F2 /* APIConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

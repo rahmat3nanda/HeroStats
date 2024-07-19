@@ -10,5 +10,5 @@ import Foundation
 protocol HeroLoader {
     typealias Result = Swift.Result<[Hero], Error>
     
-    func upload(completion: @escaping (Result) -> Void)
+    func load(completion: @escaping (Result) -> Void)
 }
