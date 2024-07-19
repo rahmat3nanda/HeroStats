@@ -12,7 +12,7 @@ final class HeroMapper {
     
     static func map(_ data: Data, from response: HTTPURLResponse) throws -> [Hero] {
         guard (200...299).contains(response.statusCode) else {
-            if let error = try? JSONDecoder().decode(ErrorResponse.self, from: data) {
+            if let error = try? JSONDecoder().decode(NetworkErrorResponse.self, from: data) {
                 throw NetworkError.response(error)
             }
             

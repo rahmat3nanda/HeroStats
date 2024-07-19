@@ -22,6 +22,7 @@
 		AF3E4E042C4A77F000C942F2 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF3E4E012C4A77F000C942F2 /* Shared.framework */; };
 		AF3E4E052C4A77F000C942F2 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AF3E4E012C4A77F000C942F2 /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AF3E4E082C4A79E200C942F2 /* HeroMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4E072C4A79E100C942F2 /* HeroMapper.swift */; };
+		AF3E4E0E2C4A7CDD00C942F2 /* RemoteHeroLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4E0D2C4A7CDD00C942F2 /* RemoteHeroLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +58,7 @@
 		AF3E4E002C4A77F000C942F2 /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF3E4E012C4A77F000C942F2 /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF3E4E072C4A79E100C942F2 /* HeroMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroMapper.swift; sourceTree = "<group>"; };
+		AF3E4E0D2C4A7CDD00C942F2 /* RemoteHeroLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteHeroLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				AF3E4DF52C4A748D00C942F2 /* HeroEndpoint.swift */,
 				AF3E4DF12C4A741B00C942F2 /* HeroLoader.swift */,
 				AF3E4E072C4A79E100C942F2 /* HeroMapper.swift */,
+				AF3E4E0D2C4A7CDD00C942F2 /* RemoteHeroLoader.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			files = (
 				AF3E4D952C4A6B1A00C942F2 /* ViewController.swift in Sources */,
 				AF3E4D912C4A6B1A00C942F2 /* AppDelegate.swift in Sources */,
+				AF3E4E0E2C4A7CDD00C942F2 /* RemoteHeroLoader.swift in Sources */,
 				AF3E4D932C4A6B1A00C942F2 /* SceneDelegate.swift in Sources */,
 				AF3E4DED2C4A718500C942F2 /* Hero.swift in Sources */,
 				AF3E4DF62C4A748D00C942F2 /* HeroEndpoint.swift in Sources */,
