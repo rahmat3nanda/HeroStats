@@ -7,6 +7,7 @@
 
 import UIKit
 import Networking
+import Shared
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -40,7 +41,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 // MARK: - Hero Page
 extension SceneDelegate {
     func makeHeroController() -> UIViewController {
-        let controller = HeroController(loader: makeHeroLoader())
+        let controller = HeroController()
+        let loader = MainQueueDispatchDecorator(decoratee: makeHeroLoader())
+        let presenter = HeroPresenter(view: controller, loader: loader)
+        controller.presenter = presenter
         
         return controller
     }
@@ -48,6 +52,14 @@ extension SceneDelegate {
     func makeHeroLoader() -> HeroLoader {
         let loader = RemoteHeroLoader(baseUrl: apiBaseUrl, client: httpClient)
         return loader
+    }
+}
+
+extension MainQueueDispatchDecorator: HeroLoader where T == HeroLoader {
+    func load(completion: @escaping (HeroLoader.Result) -> Void) {
+        decoratee.load{ [weak self] result in
+            self?.dispatch { completion(result) }
+        }
     }
 }
 
