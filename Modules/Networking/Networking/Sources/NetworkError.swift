@@ -14,5 +14,5 @@ public struct NetworkErrorResponse: Codable {
 public enum NetworkError: Error {
     case connectivity
     case invalidData
-    case response(ErrorResponse)
+    case response(NetworkErrorResponse)
 }
