@@ -23,6 +23,7 @@
 		AF3E4E052C4A77F000C942F2 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AF3E4E012C4A77F000C942F2 /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AF3E4E082C4A79E200C942F2 /* HeroMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4E072C4A79E100C942F2 /* HeroMapper.swift */; };
 		AF3E4E0E2C4A7CDD00C942F2 /* RemoteHeroLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4E0D2C4A7CDD00C942F2 /* RemoteHeroLoader.swift */; };
+		AF3E4E172C4A7FA400C942F2 /* HeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4E162C4A7FA400C942F2 /* HeroView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,6 +60,7 @@
 		AF3E4E012C4A77F000C942F2 /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF3E4E072C4A79E100C942F2 /* HeroMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroMapper.swift; sourceTree = "<group>"; };
 		AF3E4E0D2C4A7CDD00C942F2 /* RemoteHeroLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteHeroLoader.swift; sourceTree = "<group>"; };
+		AF3E4E162C4A7FA400C942F2 /* HeroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		AF3E4D8F2C4A6B1A00C942F2 /* HeroStats */ = {
 			isa = PBXGroup;
 			children = (
+				AF3E4E152C4A7F9600C942F2 /* View */,
 				AF3E4DF02C4A740A00C942F2 /* Data */,
 				AF3E4DEB2C4A713600C942F2 /* Model */,
 				AF3E4D902C4A6B1A00C942F2 /* AppDelegate.swift */,
@@ -145,6 +148,14 @@
 				AF3E4E0D2C4A7CDD00C942F2 /* RemoteHeroLoader.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		AF3E4E152C4A7F9600C942F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AF3E4E162C4A7FA400C942F2 /* HeroView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +258,7 @@
 			files = (
 				AF3E4D952C4A6B1A00C942F2 /* ViewController.swift in Sources */,
 				AF3E4D912C4A6B1A00C942F2 /* AppDelegate.swift in Sources */,
+				AF3E4E172C4A7FA400C942F2 /* HeroView.swift in Sources */,
 				AF3E4E0E2C4A7CDD00C942F2 /* RemoteHeroLoader.swift in Sources */,
 				AF3E4D932C4A6B1A00C942F2 /* SceneDelegate.swift in Sources */,
 				AF3E4DED2C4A718500C942F2 /* Hero.swift in Sources */,
