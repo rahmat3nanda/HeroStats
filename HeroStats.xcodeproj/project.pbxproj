@@ -16,6 +16,7 @@
 		AF3E4D9D2C4A6B1C00C942F2 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = AF3E4D9C2C4A6B1C00C942F2 /* Base */; };
 		AF3E4DED2C4A718500C942F2 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4DEC2C4A718500C942F2 /* Hero.swift */; };
 		AF3E4DF22C4A741B00C942F2 /* HeroLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4DF12C4A741B00C942F2 /* HeroLoader.swift */; };
+		AF3E4DF62C4A748D00C942F2 /* HeroEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4DF52C4A748D00C942F2 /* HeroEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		AF3E4D9E2C4A6B1C00C942F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF3E4DEC2C4A718500C942F2 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		AF3E4DF12C4A741B00C942F2 /* HeroLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroLoader.swift; sourceTree = "<group>"; };
+		AF3E4DF52C4A748D00C942F2 /* HeroEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		AF3E4DF02C4A740A00C942F2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				AF3E4DF52C4A748D00C942F2 /* HeroEndpoint.swift */,
 				AF3E4DF12C4A741B00C942F2 /* HeroLoader.swift */,
 			);
 			path = Data;
@@ -214,6 +217,7 @@
 				AF3E4D912C4A6B1A00C942F2 /* AppDelegate.swift in Sources */,
 				AF3E4D932C4A6B1A00C942F2 /* SceneDelegate.swift in Sources */,
 				AF3E4DED2C4A718500C942F2 /* Hero.swift in Sources */,
+				AF3E4DF62C4A748D00C942F2 /* HeroEndpoint.swift in Sources */,
 				AF3E4DF22C4A741B00C942F2 /* HeroLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
