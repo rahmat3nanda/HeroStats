@@ -11,6 +11,8 @@
 		AF3E4E112C4A7D8C00C942F2 /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4E102C4A7D8C00C942F2 /* MainQueueDispatchDecorator.swift */; };
 		AF3E4E1A2C4A7FE200C942F2 /* Align.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4E192C4A7FE200C942F2 /* Align.swift */; };
 		AF3E4E1D2C4A835F00C942F2 /* NoInternetConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4E1C2C4A835F00C942F2 /* NoInternetConnectionView.swift */; };
+		AF3E4E212C4AA03A00C942F2 /* WarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4E202C4AA03A00C942F2 /* WarningView.swift */; };
+		AF3E4E242C4AAE0F00C942F2 /* UIView+TapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4E232C4AAE0F00C942F2 /* UIView+TapGesture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		AF3E4E102C4A7D8C00C942F2 /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
 		AF3E4E192C4A7FE200C942F2 /* Align.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Align.swift; sourceTree = "<group>"; };
 		AF3E4E1C2C4A835F00C942F2 /* NoInternetConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoInternetConnectionView.swift; sourceTree = "<group>"; };
+		AF3E4E202C4AA03A00C942F2 /* WarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningView.swift; sourceTree = "<group>"; };
+		AF3E4E232C4AAE0F00C942F2 /* UIView+TapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TapGesture.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 		AF3E4E0F2C4A7D7D00C942F2 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				AF3E4E222C4AADF600C942F2 /* Extensions */,
 				AF3E4E182C4A7FD500C942F2 /* AutoLayout */,
 				AF3E4E1B2C4A834D00C942F2 /* Views */,
 				AF3E4E102C4A7D8C00C942F2 /* MainQueueDispatchDecorator.swift */,
@@ -78,9 +83,18 @@
 		AF3E4E1B2C4A834D00C942F2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AF3E4E202C4AA03A00C942F2 /* WarningView.swift */,
 				AF3E4E1C2C4A835F00C942F2 /* NoInternetConnectionView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		AF3E4E222C4AADF600C942F2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AF3E4E232C4AAE0F00C942F2 /* UIView+TapGesture.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,9 +177,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF3E4E212C4AA03A00C942F2 /* WarningView.swift in Sources */,
 				AF3E4E1D2C4A835F00C942F2 /* NoInternetConnectionView.swift in Sources */,
 				AF3E4E112C4A7D8C00C942F2 /* MainQueueDispatchDecorator.swift in Sources */,
 				AF3E4E1A2C4A7FE200C942F2 /* Align.swift in Sources */,
+				AF3E4E242C4AAE0F00C942F2 /* UIView+TapGesture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
