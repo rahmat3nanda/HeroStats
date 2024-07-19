@@ -14,6 +14,12 @@ enum HeroControllerViewType {
     case error
 }
 
+protocol HeroControllerProtocol: AnyObject {
+    func showNoInternet()
+    func showError(with message: String)
+    func showData(with data: [Hero])
+}
+
 class HeroController: UIViewController {
     
     var viewType: HeroControllerViewType = .hero {
@@ -51,6 +57,20 @@ class HeroController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view = heroView
+    }
+}
+
+extension HeroController: HeroControllerProtocol {
+    func showNoInternet() {
+        viewType = .noInternet
+    }
+    
+    func showError(with message: String) {
+        viewType = .error
+    }
+    
+    func showData(with data: [Hero]) {
+        viewType = .hero
     }
 }
 
