@@ -22,13 +22,13 @@ protocol HeroControllerProtocol: AnyObject {
 
 class HeroController: UIViewController {
     
+    var presenter: HeroPresenterProtocol?
+    
     var viewType: HeroControllerViewType = .hero {
         didSet {
             updateView()
         }
     }
-    
-    let loader: HeroLoader
     
     lazy var heroView: HeroView = {
         let view = HeroView()
@@ -45,8 +45,7 @@ class HeroController: UIViewController {
         return view
     }()
     
-    init(loader: HeroLoader) {
-        self.loader = loader
+    init() {
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -57,6 +56,7 @@ class HeroController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view = heroView
+        presenter?.loadData()
     }
 }
 
