@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Modules/Shared/Shared.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Modules/Networking/Networking.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:HeroStats.xcodeproj">
    </FileRef>
    <FileRef
