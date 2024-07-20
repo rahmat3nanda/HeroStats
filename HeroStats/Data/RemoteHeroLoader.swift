@@ -20,7 +20,7 @@ class RemoteHeroLoader: HeroLoader {
         self.client = client
     }
     
-    func load(completion: @escaping (Result) -> Void) {
+    func load(skipCache: Bool, completion: @escaping (Result) -> Void) {
         let request = HeroEndpoint.data.url(baseURL: baseUrl)
         
         Task {

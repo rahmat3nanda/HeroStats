@@ -10,5 +10,11 @@ import Foundation
 protocol HeroLoader {
     typealias Result = Swift.Result<[Hero], Error>
     
-    func load(completion: @escaping (Result) -> Void)
+    func load(skipCache: Bool, completion: @escaping (Result) -> Void)
+}
+
+extension HeroLoader {
+    func load(skipCache: Bool = true, completion: @escaping (Result) -> Void) {
+        load(skipCache: skipCache, completion: completion)
+    }
 }
