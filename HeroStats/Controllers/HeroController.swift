@@ -17,7 +17,7 @@ enum HeroControllerViewType {
 protocol HeroControllerProtocol: AnyObject {
     func showNoInternet()
     func showError(with message: String)
-    func showData(with data: [Hero])
+    func showData(data: [Hero], role: [HeroRole])
 }
 
 class HeroController: UIViewController {
@@ -45,6 +45,9 @@ class HeroController: UIViewController {
         return view
     }()
     
+    var data: [Hero]?
+    var role: [HeroRole]?
+    
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -56,6 +59,7 @@ class HeroController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view = heroView
+        title = "Hero Stat"
         presenter?.loadData()
     }
 }
@@ -69,8 +73,10 @@ extension HeroController: HeroControllerProtocol {
         viewType = .error
     }
     
-    func showData(with data: [Hero]) {
+    func showData(data: [Hero], role: [HeroRole]) {
         viewType = .hero
+        self.data = data
+        self.role = role
     }
 }
 
