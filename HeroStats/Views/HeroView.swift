@@ -8,23 +8,45 @@
 import UIKit
 import Shared
 
+fileprivate enum HeroCollectionViewSection: Int {
+    case role = 0
+    case hero = 1
+    
+    static let count: Int = {
+        var max: Int = 0
+        while let _ = HeroCollectionViewSection(rawValue: max) { max += 1 }
+        return max
+    }()
+}
+
 class HeroView: UIView {
     
-    lazy var roleCollectionView: UICollectionView = {
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        let collectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.showsVerticalScrollIndicator = false
-        return collectionView
+    var data: [Hero] = [] {
+        didSet {
+            collectionView.reloadSections(IndexSet(integer: HeroCollectionViewSection.hero.rawValue))
+        }
+    }
+    
+    var role: [HeroRole] = [] {
+        didSet {
+            collectionView.reloadSections(IndexSet(integer: HeroCollectionViewSection.role.rawValue))
+        }
+    }
+    
+    private lazy var refreshControl: UIRefreshControl = {
+        let view = UIRefreshControl()
+        view.tintColor = .red
+        view.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        return view
     }()
     
-    lazy var dataCollectionView: UICollectionView = {
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        let collectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+    private lazy var collectionView: UICollectionView = {
+        let collectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
+        collectionView.refreshControl = refreshControl
+        
         return collectionView
     }()
     
@@ -43,18 +65,75 @@ private extension HeroView {
     func configUI() {
         backgroundColor = .white
         
-        addSubview(roleCollectionView)
-        roleCollectionView.anchors.top.equal(safeAreaLayoutGuide.anchors.top)
-        roleCollectionView.anchors.bottom.equal(safeAreaLayoutGuide.anchors.bottom)
-        roleCollectionView.anchors.leading.equal(safeAreaLayoutGuide.anchors.leading)
-        roleCollectionView.anchors.width.lessThanOrEqual(120)
+        configCollectionView()
         
-        addSubview(dataCollectionView)
-        dataCollectionView.anchors.top.equal(safeAreaLayoutGuide.anchors.top)
-        dataCollectionView.anchors.bottom.equal(safeAreaLayoutGuide.anchors.bottom)
-        dataCollectionView.anchors.leading.equal(roleCollectionView.anchors.trailing)
-        dataCollectionView.anchors.trailing.equal(safeAreaLayoutGuide.anchors.trailing)
+        addSubview(collectionView)
+        collectionView.anchors.edges.pin(to: safeAreaLayoutGuide, insets: .zero)
+    }
+    
+    private func configCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.collectionViewLayout = createContentLayout()
+        collectionView.registerCustomCell(HeroCollectionCell.self)
+        collectionView.registerCustomCell(HeroRoleCollectionCell.self)
+    }
+    
+    @objc private func handleRefresh() {
+        refreshControl.endRefreshing()
+    }
+    
+    private func createContentLayout() -> UICollectionViewCompositionalLayout {
+        
+        let config = UICollectionViewCompositionalLayoutConfiguration()
+        config.scrollDirection = .horizontal
+        
+        let sectionProvider: UICollectionViewCompositionalLayoutSectionProvider = { (sectionIndex, environtent) -> NSCollectionLayoutSection? in
+            let screenWidth = self.safeAreaLayoutGuide.layoutFrame.width
+            let width: NSCollectionLayoutDimension = sectionIndex == HeroCollectionViewSection.role.rawValue ? .estimated(130) : .estimated(screenWidth - 130)
+            let itemSize = NSCollectionLayoutSize(widthDimension: width , heightDimension: .fractionalHeight(1))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            
+            let groupSize = NSCollectionLayoutSize(widthDimension: width, heightDimension: .fractionalHeight(1))
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+            
+            let section = NSCollectionLayoutSection(group: group)
+            
+            section.contentInsets = .zero
+            
+            return section
+        }
+        
+        return UICollectionViewCompositionalLayout(sectionProvider: sectionProvider, configuration: config)
     }
 }
 
-//#Preview { HeroView() }
+extension HeroView: UICollectionViewDataSource {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        switch HeroCollectionViewSection(rawValue: indexPath.section) {
+        case .hero:
+            let cell = collectionView.dequeueReusableCustomCell(with: HeroCollectionCell.self, indexPath: indexPath)
+            cell.data = data
+            return cell
+        case .role:
+            let cell = collectionView.dequeueReusableCustomCell(with: HeroRoleCollectionCell.self, indexPath: indexPath)
+            cell.data = role
+            return cell
+        default: return UICollectionViewCell()
+        }
+    }
+    
+    public func numberOfSections(in collectionView: UICollectionView) -> Int {
+        HeroCollectionViewSection.count
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        switch HeroCollectionViewSection(rawValue: section) {
+        case .role: 1
+        case .hero: 1
+        default: 0
+        }
+    }
+}
+
+extension HeroView: UICollectionViewDelegate {}
