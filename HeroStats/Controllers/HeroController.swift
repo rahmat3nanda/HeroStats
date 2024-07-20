@@ -60,7 +60,7 @@ class HeroController: UIViewController {
         super.viewDidLoad()
         view = heroView
         title = "Hero Stat"
-        presenter?.loadData()
+        presenter?.loadData(skipCache: false)
     }
 }
 
