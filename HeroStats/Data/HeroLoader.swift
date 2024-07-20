@@ -14,7 +14,7 @@ protocol HeroLoader {
 }
 
 extension HeroLoader {
-    func load(skipCache: Bool = true, completion: @escaping (Result) -> Void) {
+    func load(_ skipCache: Bool = true, completion: @escaping (Result) -> Void) {
         load(skipCache: skipCache, completion: completion)
     }
 }

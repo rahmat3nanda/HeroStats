@@ -56,8 +56,8 @@ extension SceneDelegate {
 }
 
 extension MainQueueDispatchDecorator: HeroLoader where T == HeroLoader {
-    func load(completion: @escaping (HeroLoader.Result) -> Void) {
-        decoratee.load{ [weak self] result in
+    func load(skipCache: Bool, completion: @escaping (HeroLoader.Result) -> Void) {
+        decoratee.load(skipCache: skipCache) { [weak self] result in
             self?.dispatch { completion(result) }
         }
     }
