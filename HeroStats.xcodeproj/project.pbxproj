@@ -27,6 +27,7 @@
 		AF3E4E292C4AB01600C942F2 /* HeroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4E282C4AB01600C942F2 /* HeroController.swift */; };
 		AF3E4E2C2C4AB9A800C942F2 /* HeroPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4E2B2C4AB9A800C942F2 /* HeroPresenter.swift */; };
 		AF3E4E4E2C4BD13E00C942F2 /* CacheHeroLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4E4D2C4BD13E00C942F2 /* CacheHeroLoader.swift */; };
+		AF3E4E502C4BD3E200C942F2 /* HeroLoaderComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4E4F2C4BD3E200C942F2 /* HeroLoaderComposite.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,6 +68,7 @@
 		AF3E4E282C4AB01600C942F2 /* HeroController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroController.swift; sourceTree = "<group>"; };
 		AF3E4E2B2C4AB9A800C942F2 /* HeroPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPresenter.swift; sourceTree = "<group>"; };
 		AF3E4E4D2C4BD13E00C942F2 /* CacheHeroLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheHeroLoader.swift; sourceTree = "<group>"; };
+		AF3E4E4F2C4BD3E200C942F2 /* HeroLoaderComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroLoaderComposite.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				AF3E4E072C4A79E100C942F2 /* HeroMapper.swift */,
 				AF3E4E0D2C4A7CDD00C942F2 /* RemoteHeroLoader.swift */,
 				AF3E4E4D2C4BD13E00C942F2 /* CacheHeroLoader.swift */,
+				AF3E4E4F2C4BD3E200C942F2 /* HeroLoaderComposite.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				AF3E4D932C4A6B1A00C942F2 /* SceneDelegate.swift in Sources */,
 				AF3E4DED2C4A718500C942F2 /* Hero.swift in Sources */,
 				AF3E4DF62C4A748D00C942F2 /* HeroEndpoint.swift in Sources */,
+				AF3E4E502C4BD3E200C942F2 /* HeroLoaderComposite.swift in Sources */,
 				AF3E4E082C4A79E200C942F2 /* HeroMapper.swift in Sources */,
 				AF3E4DF22C4A741B00C942F2 /* HeroLoader.swift in Sources */,
 				AF3E4E4E2C4BD13E00C942F2 /* CacheHeroLoader.swift in Sources */,
