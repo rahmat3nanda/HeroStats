@@ -35,7 +35,7 @@ class RemoteHeroLoader: HeroLoader {
     
     private func map(_ data: Data, from response: HTTPURLResponse) -> Result {
         do {
-            let items = try HeroMapper.map(data, from: response)
+            let items = try HeroMapper.remote(data, from: response)
             return .success(items)
         } catch {
             return .failure(error)

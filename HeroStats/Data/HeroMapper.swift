@@ -10,7 +10,7 @@ import Networking
 
 final class HeroMapper {
     
-    static func map(_ data: Data, from response: HTTPURLResponse) throws -> [Hero] {
+    static func remote(_ data: Data, from response: HTTPURLResponse) throws -> [Hero] {
         guard (200...299).contains(response.statusCode) else {
             if let error = try? JSONDecoder().decode(NetworkErrorResponse.self, from: data) {
                 throw NetworkError.response(error)
@@ -20,6 +20,15 @@ final class HeroMapper {
         }
         
         guard let data = try? JSONDecoder().decode([Hero].self, from: data) else {
+            throw NetworkError.invalidData
+        }
+        
+        return data
+    }
+    
+    static func data(_ data: Data?) throws -> [Hero] {
+        guard let data = data,
+              let data = try? JSONDecoder().decode([Hero].self, from: data) else {
             throw NetworkError.invalidData
         }
         
