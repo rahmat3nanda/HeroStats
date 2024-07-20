@@ -14,6 +14,12 @@
 		AF3E4E212C4AA03A00C942F2 /* WarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4E202C4AA03A00C942F2 /* WarningView.swift */; };
 		AF3E4E242C4AAE0F00C942F2 /* UIView+TapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4E232C4AAE0F00C942F2 /* UIView+TapGesture.swift */; };
 		AF3E4E262C4AAF8500C942F2 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4E252C4AAF8500C942F2 /* ErrorView.swift */; };
+		AF3E4E422C4BCF1F00C942F2 /* Caching.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4E412C4BCF1F00C942F2 /* Caching.swift */; };
+		AF3E4E442C4BCF8800C942F2 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4E432C4BCF8800C942F2 /* Cache.swift */; };
+		AF3E4E462C4BCFBC00C942F2 /* UserDefaultsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4E452C4BCFBC00C942F2 /* UserDefaultsCache.swift */; };
+		AF3E4E482C4BCFEA00C942F2 /* KeychainCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4E472C4BCFEA00C942F2 /* KeychainCache.swift */; };
+		AF3E4E4A2C4BD01500C942F2 /* KeycahinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4E492C4BD01500C942F2 /* KeycahinService.swift */; };
+		AF3E4E4C2C4BD06A00C942F2 /* Cache+Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4E4B2C4BD06A00C942F2 /* Cache+Key.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +31,12 @@
 		AF3E4E202C4AA03A00C942F2 /* WarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningView.swift; sourceTree = "<group>"; };
 		AF3E4E232C4AAE0F00C942F2 /* UIView+TapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TapGesture.swift"; sourceTree = "<group>"; };
 		AF3E4E252C4AAF8500C942F2 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		AF3E4E412C4BCF1F00C942F2 /* Caching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caching.swift; sourceTree = "<group>"; };
+		AF3E4E432C4BCF8800C942F2 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		AF3E4E452C4BCFBC00C942F2 /* UserDefaultsCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsCache.swift; sourceTree = "<group>"; };
+		AF3E4E472C4BCFEA00C942F2 /* KeychainCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainCache.swift; sourceTree = "<group>"; };
+		AF3E4E492C4BD01500C942F2 /* KeycahinService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeycahinService.swift; sourceTree = "<group>"; };
+		AF3E4E4B2C4BD06A00C942F2 /* Cache+Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cache+Key.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,10 +78,12 @@
 		AF3E4E0F2C4A7D7D00C942F2 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				AF3E4E402C4BCEFD00C942F2 /* Cache */,
 				AF3E4E222C4AADF600C942F2 /* Extensions */,
 				AF3E4E182C4A7FD500C942F2 /* AutoLayout */,
 				AF3E4E1B2C4A834D00C942F2 /* Views */,
 				AF3E4E102C4A7D8C00C942F2 /* MainQueueDispatchDecorator.swift */,
+				AF3E4E492C4BD01500C942F2 /* KeycahinService.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -98,6 +112,18 @@
 				AF3E4E232C4AAE0F00C942F2 /* UIView+TapGesture.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AF3E4E402C4BCEFD00C942F2 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				AF3E4E412C4BCF1F00C942F2 /* Caching.swift */,
+				AF3E4E432C4BCF8800C942F2 /* Cache.swift */,
+				AF3E4E452C4BCFBC00C942F2 /* UserDefaultsCache.swift */,
+				AF3E4E472C4BCFEA00C942F2 /* KeychainCache.swift */,
+				AF3E4E4B2C4BD06A00C942F2 /* Cache+Key.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,9 +207,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF3E4E212C4AA03A00C942F2 /* WarningView.swift in Sources */,
+				AF3E4E422C4BCF1F00C942F2 /* Caching.swift in Sources */,
+				AF3E4E4C2C4BD06A00C942F2 /* Cache+Key.swift in Sources */,
+				AF3E4E442C4BCF8800C942F2 /* Cache.swift in Sources */,
 				AF3E4E262C4AAF8500C942F2 /* ErrorView.swift in Sources */,
+				AF3E4E482C4BCFEA00C942F2 /* KeychainCache.swift in Sources */,
 				AF3E4E1D2C4A835F00C942F2 /* NoInternetConnectionView.swift in Sources */,
 				AF3E4E112C4A7D8C00C942F2 /* MainQueueDispatchDecorator.swift in Sources */,
+				AF3E4E4A2C4BD01500C942F2 /* KeycahinService.swift in Sources */,
+				AF3E4E462C4BCFBC00C942F2 /* UserDefaultsCache.swift in Sources */,
 				AF3E4E1A2C4A7FE200C942F2 /* Align.swift in Sources */,
 				AF3E4E242C4AAE0F00C942F2 /* UIView+TapGesture.swift in Sources */,
 			);
