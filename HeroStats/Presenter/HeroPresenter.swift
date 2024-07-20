@@ -8,7 +8,13 @@
 import Networking
 
 protocol HeroPresenterProtocol: AnyObject {
-    func loadData()
+    func loadData(skipCache: Bool)
+}
+
+extension HeroPresenterProtocol {
+    func loadData(_skipCache: Bool = true) {
+        loadData(skipCache: _skipCache)
+    }
 }
 
 class HeroPresenter: HeroPresenterProtocol {
@@ -21,13 +27,13 @@ class HeroPresenter: HeroPresenterProtocol {
         self.loader = loader
     }
     
-    func loadData() {
+    func loadData(skipCache: Bool) {
         guard ReachabilityNetwork.isConnectedToNetwork() else {
             view?.showNoInternet()
             return
         }
         
-        loader.load { [weak self] result in
+        loader.load(skipCache: skipCache) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case let .success(data): self.view?.showData(data: data, role: data.getRole())
