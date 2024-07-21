@@ -112,5 +112,6 @@ extension HeroController: HeroViewDelegate {
     
     func didSelectRole(_ role: HeroRole) {
         title = "Hero Stat: \(role.rawValue)"
+        presenter?.filter(role: role)
     }
 }
