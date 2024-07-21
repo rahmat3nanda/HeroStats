@@ -106,6 +106,10 @@ private extension HeroController {
 }
 
 extension HeroController: HeroViewDelegate {
+    func didSelectHero(_ hero: Hero.HeroItem) {
+        
+    }
+    
     func didSelectRole(_ role: HeroRole) {
         title = "Hero Stat: \(role.rawValue)"
     }
