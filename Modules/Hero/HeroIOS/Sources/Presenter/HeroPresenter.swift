@@ -23,6 +23,8 @@ public class HeroPresenter: HeroPresenterProtocol {
     weak var view: HeroControllerProtocol?
     let loader: HeroLoader
     
+    private var data: [HeroItem] = []
+    
     public init(view: HeroControllerProtocol, loader: HeroLoader) {
         self.view = view
         self.loader = loader
@@ -37,7 +39,9 @@ public class HeroPresenter: HeroPresenterProtocol {
         loader.load(skipCache: skipCache) { [weak self] result in
             guard let self = self else { return }
             switch result {
-            case let .success(data): self.view?.showData(data: data, role: data.getRole())
+            case let .success(data):
+                self.data = data
+                self.view?.showData(data: data, role: data.getRole())
             case let .failure(error): self.view?.showError(with: error.localizedDescription)
             }
         }
