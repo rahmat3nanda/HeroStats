@@ -20,7 +20,13 @@ fileprivate enum HeroCollectionViewSection: Int {
     }()
 }
 
+protocol HeroViewDelegate: AnyObject {
+    func didSelectRole(_ role: HeroRole)
+}
+
 class HeroView: UIView {
+    
+    weak var delegate: HeroViewDelegate?
     
     var data: [HeroItem] = [] {
         didSet {
@@ -119,6 +125,7 @@ extension HeroView: UICollectionViewDataSource {
         case .role:
             let cell = collectionView.dequeueReusableCustomCell(with: HeroRoleCollectionCell.self, indexPath: indexPath)
             cell.data = role
+            cell.delegate = self
             return cell
         default: return UICollectionViewCell()
         }
@@ -138,3 +145,9 @@ extension HeroView: UICollectionViewDataSource {
 }
 
 extension HeroView: UICollectionViewDelegate {}
+
+extension HeroView: HeroRoleCollectionCellDelegate {
+    func didSelect(_ role: HeroRole) {
+        delegate?.didSelectRole(role)
+    }
+}
