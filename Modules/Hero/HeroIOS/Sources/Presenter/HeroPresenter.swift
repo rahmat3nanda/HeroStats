@@ -49,9 +49,14 @@ fileprivate extension Array where Element == HeroItem {
         var data: [HeroRole] = []
         for hero in self {
             for role in hero.roles {
-                data.append(role)
+                if !data.contains(where: {$0.rawValue == role.rawValue}) {
+                    data.append(role)
+                }
             }
         }
+        
+        data.append(HeroRole(rawValue: "All")!)
+        
         return data
     }
 }
