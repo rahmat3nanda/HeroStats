@@ -61,6 +61,11 @@ public class HeroController: UIViewController {
         title = "Hero Stat"
         presenter?.loadData(skipCache: false)
     }
+    
+    public override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        heroView.orientationChanged()
+    }
 }
 
 extension HeroController: HeroControllerProtocol {
