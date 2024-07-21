@@ -6,6 +6,7 @@
 //
 
 import Networking
+import Hero
 
 protocol HeroPresenterProtocol: AnyObject {
     func loadData(skipCache: Bool)
@@ -43,7 +44,7 @@ class HeroPresenter: HeroPresenterProtocol {
     }
 }
 
-fileprivate extension Array where Element == Hero {
+fileprivate extension Array where Element == HeroItem {
     func getRole() -> [HeroRole] {
         var data: [HeroRole] = []
         for hero in self {

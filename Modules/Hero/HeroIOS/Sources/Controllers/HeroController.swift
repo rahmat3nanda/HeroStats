@@ -7,6 +7,7 @@
 
 import UIKit
 import Shared
+import Hero
 
 enum HeroControllerViewType {
     case hero
@@ -17,7 +18,7 @@ enum HeroControllerViewType {
 protocol HeroControllerProtocol: AnyObject {
     func showNoInternet()
     func showError(with message: String)
-    func showData(data: [Hero], role: [HeroRole])
+    func showData(data: [HeroItem], role: [HeroRole])
 }
 
 class HeroController: UIViewController {
@@ -45,7 +46,7 @@ class HeroController: UIViewController {
         return view
     }()
     
-    var data: [Hero]?
+    var data: [HeroItem]?
     var role: [HeroRole]?
     
     init() {
@@ -73,7 +74,7 @@ extension HeroController: HeroControllerProtocol {
         viewType = .error
     }
     
-    func showData(data: [Hero], role: [HeroRole]) {
+    func showData(data: [HeroItem], role: [HeroRole]) {
         viewType = .hero
         self.data = data
         self.role = role

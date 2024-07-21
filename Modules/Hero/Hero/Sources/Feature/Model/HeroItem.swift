@@ -7,19 +7,19 @@
 
 import Foundation
 
-enum HeroAttackType: String, Codable {
+public enum HeroAttackType: String, Codable {
     case melee = "Melee"
     case ranged = "Ranged"
 }
 
-enum HeroPrimaryAttr: String, Codable {
+public enum HeroPrimaryAttr: String, Codable {
     case agi = "agi"
     case all = "all"
     case int = "int"
     case str = "str"
 }
 
-enum HeroRole: String, Codable {
+public enum HeroRole: String, Codable {
     case carry = "Carry"
     case disabler = "Disabler"
     case durable = "Durable"
@@ -30,41 +30,41 @@ enum HeroRole: String, Codable {
     case support = "Support"
 }
 
-struct Hero: Codable {
-    let id: Int
-    let name: String
-    let primaryAttr: HeroPrimaryAttr
-    let attackType: HeroAttackType
-    let roles: [HeroRole]
-    let img, icon: String
-    let baseHealth: Int
-    let baseHealthRegen: Double
-    let baseMana: Int
-    let baseManaRegen: Double
-    let baseArmor, baseMr, baseAttackMin, baseAttackMax: Int
-    let baseStr, baseAgi, baseInt: Int
-    let strGain, agiGain, intGain: Double
-    let attackRange, projectileSpeed: Int
-    let attackRate: Double
-    let baseAttackTime: Int
-    let attackPoint: Double
-    let moveSpeed: Int
-    let turnRate: Double?
-    let cmEnabled: Bool
-    let legs, dayVision, nightVision: Int
-    let localizedName: String
-    let the1_Pick, the1_Win, the2_Pick, the2_Win: Int
-    let the3_Pick, the3_Win, the4_Pick, the4_Win: Int
-    let the5_Pick, the5_Win, the6_Pick, the6_Win: Int
-    let the7_Pick, the7_Win, the8_Pick, the8_Win: Int
-    let turboPicks: Int
-    let turboPicksTrend: [Int]
-    let turboWINS: Int
-    let turboWINSTrend: [Int]
-    let proPick, proWin, proBan, pubPick: Int
-    let pubPickTrend: [Int]
-    let pubWin: Int
-    let pubWinTrend: [Int]
+public struct HeroItem: Codable {
+    public let id: Int
+    public let name: String
+    public let primaryAttr: HeroPrimaryAttr
+    public let attackType: HeroAttackType
+    public let roles: [HeroRole]
+    public let img, icon: String
+    public let baseHealth: Int
+    public let baseHealthRegen: Double
+    public let baseMana: Int
+    public let baseManaRegen: Double
+    public let baseArmor, baseMr, baseAttackMin, baseAttackMax: Int
+    public let baseStr, baseAgi, baseInt: Int
+    public let strGain, agiGain, intGain: Double
+    public let attackRange, projectileSpeed: Int
+    public let attackRate: Double
+    public let baseAttackTime: Int
+    public let attackPoint: Double
+    public let moveSpeed: Int
+    public let turnRate: Double?
+    public let cmEnabled: Bool
+    public let legs, dayVision, nightVision: Int
+    public let localizedName: String
+    public let the1_Pick, the1_Win, the2_Pick, the2_Win: Int
+    public let the3_Pick, the3_Win, the4_Pick, the4_Win: Int
+    public let the5_Pick, the5_Win, the6_Pick, the6_Win: Int
+    public let the7_Pick, the7_Win, the8_Pick, the8_Win: Int
+    public let turboPicks: Int
+    public let turboPicksTrend: [Int]
+    public let turboWINS: Int
+    public let turboWINSTrend: [Int]
+    public let proPick, proWin, proBan, pubPick: Int
+    public let pubPickTrend: [Int]
+    public let pubWin: Int
+    public let pubWinTrend: [Int]
     
     enum CodingKeys: String, CodingKey {
         case id, name

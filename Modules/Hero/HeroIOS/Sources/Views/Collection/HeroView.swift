@@ -7,6 +7,7 @@
 
 import UIKit
 import Shared
+import Hero
 
 fileprivate enum HeroCollectionViewSection: Int {
     case role = 0
@@ -21,7 +22,7 @@ fileprivate enum HeroCollectionViewSection: Int {
 
 class HeroView: UIView {
     
-    var data: [Hero] = [] {
+    var data: [HeroItem] = [] {
         didSet {
             collectionView.reloadSections(IndexSet(integer: HeroCollectionViewSection.hero.rawValue))
         }

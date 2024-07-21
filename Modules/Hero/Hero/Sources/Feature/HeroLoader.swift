@@ -7,8 +7,8 @@
 
 import Foundation
 
-protocol HeroLoader {
-    typealias Result = Swift.Result<[Hero], Error>
+public protocol HeroLoader {
+    typealias Result = Swift.Result<[HeroItem], Error>
     
     func load(skipCache: Bool, completion: @escaping (Result) -> Void)
 }

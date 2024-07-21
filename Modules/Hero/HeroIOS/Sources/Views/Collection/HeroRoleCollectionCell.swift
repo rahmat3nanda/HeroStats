@@ -7,6 +7,7 @@
 
 import UIKit
 import Shared
+import Hero
 
 class HeroRoleCollectionCell: UICollectionViewCell {
     var data: [HeroRole] = [] {

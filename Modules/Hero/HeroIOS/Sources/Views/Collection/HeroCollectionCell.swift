@@ -7,9 +7,10 @@
 
 import UIKit
 import Shared
+import Hero
 
 class HeroCollectionCell: UICollectionViewCell {
-    var data: [Hero] = [] {
+    var data: [HeroItem] = [] {
         didSet {
             collectionView.reloadData()
         }
