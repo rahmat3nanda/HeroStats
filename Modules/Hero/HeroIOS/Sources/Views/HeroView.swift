@@ -22,6 +22,7 @@ fileprivate enum HeroCollectionViewSection: Int {
 
 protocol HeroViewDelegate: AnyObject {
     func didSelectRole(_ role: HeroRole)
+    func didSelectHero(_ hero: HeroItem)
 }
 
 class HeroView: UIView {
@@ -68,6 +69,16 @@ class HeroView: UIView {
     }
 }
 
+// MARK: - Open Helper
+extension HeroView {
+    func orientationChanged() {
+        if let cell = collectionView.cellForItem(at: IndexPath(item: 0, section: HeroCollectionViewSection.hero.rawValue)) as? HeroCollectionCell {
+            cell.refreshCollection()
+        }
+    }
+}
+
+// MARK: - Private Helper
 private extension HeroView {
     func configUI() {
         backgroundColor = .white
@@ -145,6 +156,12 @@ extension HeroView: UICollectionViewDataSource {
 }
 
 extension HeroView: UICollectionViewDelegate {}
+
+extension HeroView: HeroCollectionCellDelegate {
+    func didSelect(_ hero: HeroItem) {
+        delegate?.didSelectHero(hero)
+    }
+}
 
 extension HeroView: HeroRoleCollectionCellDelegate {
     func didSelect(_ role: HeroRole) {
