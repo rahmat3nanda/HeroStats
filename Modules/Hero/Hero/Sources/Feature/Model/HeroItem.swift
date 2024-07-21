@@ -28,6 +28,7 @@ public enum HeroRole: String, Codable {
     case nuker = "Nuker"
     case pusher = "Pusher"
     case support = "Support"
+    case all = "All"
 }
 
 public struct HeroItem: Codable {
