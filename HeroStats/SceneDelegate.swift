@@ -9,6 +9,7 @@ import UIKit
 import Networking
 import Shared
 import Hero
+import HeroIOS
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -22,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-//        navigationController.setViewControllers([makeHeroController()], animated: true)
+        navigationController.setViewControllers([makeHeroController()], animated: true)
         
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
@@ -32,21 +33,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 }
 
 // MARK: - Hero Page
-//extension SceneDelegate {
-//    func makeHeroController() -> UIViewController {
-//        let controller = HeroController()
-//        let loader = MainQueueDispatchDecorator(decoratee: HeroLoaderFactory.create())
-//        let presenter = HeroPresenter(view: controller, loader: loader)
-//        controller.presenter = presenter
-//        
-//        return controller
-//    }
-//}
+extension SceneDelegate {
+    func makeHeroController() -> UIViewController {
+        let controller = HeroController()
+        let loader = MainQueueDispatchDecorator(decoratee: HeroLoaderFactory.create())
+        let presenter = HeroPresenter(view: controller, loader: loader)
+        controller.presenter = presenter
+        
+        return controller
+    }
+}
 
-//extension MainQueueDispatchDecorator: HeroLoader where T == HeroLoader {
-//    func load(skipCache: Bool, completion: @escaping (HeroLoader.Result) -> Void) {
-//        decoratee.load(skipCache: skipCache) { [weak self] result in
-//            self?.dispatch { completion(result) }
-//        }
-//    }
-//}
+extension MainQueueDispatchDecorator: HeroLoader where T == HeroLoader {
+    public func load(skipCache: Bool, completion: @escaping (HeroLoader.Result) -> Void) {
+        decoratee.load(skipCache: skipCache) { [weak self] result in
+            self?.dispatch { completion(result) }
+        }
+    }
+}

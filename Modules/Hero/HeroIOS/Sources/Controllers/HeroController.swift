@@ -15,49 +15,49 @@ enum HeroControllerViewType {
     case error
 }
 
-protocol HeroControllerProtocol: AnyObject {
+public protocol HeroControllerProtocol: AnyObject {
     func showNoInternet()
     func showError(with message: String)
     func showData(data: [HeroItem], role: [HeroRole])
 }
 
-class HeroController: UIViewController {
+public class HeroController: UIViewController {
     
-    var presenter: HeroPresenterProtocol?
+    public var presenter: HeroPresenterProtocol?
     
-    var viewType: HeroControllerViewType = .hero {
+    private var viewType: HeroControllerViewType = .hero {
         didSet {
             updateView()
         }
     }
     
-    lazy var heroView: HeroView = {
+    private lazy var heroView: HeroView = {
         let view = HeroView()
         return view
     }()
     
-    lazy var noInternetView: NoInternetConnectionView = {
+    private lazy var noInternetView: NoInternetConnectionView = {
         let view = NoInternetConnectionView()
         return view
     }()
     
-    lazy var errorView: ErrorView = {
+    private lazy var errorView: ErrorView = {
         let view = ErrorView()
         return view
     }()
     
-    var data: [HeroItem]?
-    var role: [HeroRole]?
+    private var data: [HeroItem]?
+    private var role: [HeroRole]?
     
-    init() {
+    public init() {
         super.init(nibName: nil, bundle: nil)
     }
     
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         view = heroView
         title = "Hero Stat"
@@ -66,15 +66,15 @@ class HeroController: UIViewController {
 }
 
 extension HeroController: HeroControllerProtocol {
-    func showNoInternet() {
+    public func showNoInternet() {
         viewType = .noInternet
     }
     
-    func showError(with message: String) {
+    public func showError(with message: String) {
         viewType = .error
     }
     
-    func showData(data: [HeroItem], role: [HeroRole]) {
+    public func showData(data: [HeroItem], role: [HeroRole]) {
         viewType = .hero
         self.data = data
         self.role = role

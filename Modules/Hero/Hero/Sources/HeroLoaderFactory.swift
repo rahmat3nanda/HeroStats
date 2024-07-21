@@ -9,11 +9,11 @@ import Foundation
 import Shared
 import Networking
 
-class HeroLoaderFactory {
+public class HeroLoaderFactory {
     
     private init() {}
     
-    static func create() -> HeroLoader {
+    public static func create() -> HeroLoader {
         let cacheLoader = CacheHeroLoader(cache: Cache.common, key: .hero)
         
         let url = URL(string: APIConstants.instance.apiBaseUrl)!

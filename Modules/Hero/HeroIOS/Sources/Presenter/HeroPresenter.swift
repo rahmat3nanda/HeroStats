@@ -8,7 +8,7 @@
 import Networking
 import Hero
 
-protocol HeroPresenterProtocol: AnyObject {
+public protocol HeroPresenterProtocol: AnyObject {
     func loadData(skipCache: Bool)
 }
 
@@ -18,17 +18,17 @@ extension HeroPresenterProtocol {
     }
 }
 
-class HeroPresenter: HeroPresenterProtocol {
+public class HeroPresenter: HeroPresenterProtocol {
     
     weak var view: HeroControllerProtocol?
     let loader: HeroLoader
     
-    init(view: HeroControllerProtocol, loader: HeroLoader) {
+    public init(view: HeroControllerProtocol, loader: HeroLoader) {
         self.view = view
         self.loader = loader
     }
     
-    func loadData(skipCache: Bool) {
+    public func loadData(skipCache: Bool) {
         guard ReachabilityNetwork.isConnectedToNetwork() else {
             view?.showNoInternet()
             return
