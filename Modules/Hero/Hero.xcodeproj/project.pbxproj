@@ -11,12 +11,17 @@
 		AF3E4E9A2C4CCD4500C942F2 /* HeroIOS.h in Headers */ = {isa = PBXBuildFile; fileRef = AF3E4E992C4CCD4500C942F2 /* HeroIOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E8A470432A0CED65DFDB41A8 /* HeroLoaderFactory.swift in Resources */ = {isa = PBXBuildFile; fileRef = E8A477C06123008E5D4DE925 /* HeroLoaderFactory.swift */; };
 		E8A4719A9E86FC92D5349706 /* Hero.swift in Resources */ = {isa = PBXBuildFile; fileRef = E8A47CD6C40B21D177BFF24D /* Hero.swift */; };
+		E8A4727944D83512736B3123 /* HeroRoleCollectionCell.swift in Resources */ = {isa = PBXBuildFile; fileRef = E8A4773275FED65BAE2529A0 /* HeroRoleCollectionCell.swift */; };
 		E8A4737AE096ACC86666A050 /* RemoteHeroLoader.swift in Resources */ = {isa = PBXBuildFile; fileRef = E8A4709B23005C6399750C66 /* RemoteHeroLoader.swift */; };
 		E8A4738C0599612CD0B790EE /* HeroLoader.swift in Resources */ = {isa = PBXBuildFile; fileRef = E8A47C74298F6CCF363FC2A2 /* HeroLoader.swift */; };
+		E8A4770C9F8991044188D8D4 /* HeroCollectionCell.swift in Resources */ = {isa = PBXBuildFile; fileRef = E8A47A667DF12F946385A158 /* HeroCollectionCell.swift */; };
 		E8A4797E74C6B5E9CE2C716D /* HeroLoaderComposite.swift in Resources */ = {isa = PBXBuildFile; fileRef = E8A47881D5AF7C7772B2AB3E /* HeroLoaderComposite.swift */; };
 		E8A47B336EC9BB46D6613BC7 /* HeroMapper.swift in Resources */ = {isa = PBXBuildFile; fileRef = E8A472504037755364F5C614 /* HeroMapper.swift */; };
 		E8A47C0FA81CB030F8924C6C /* CacheHeroLoader.swift in Resources */ = {isa = PBXBuildFile; fileRef = E8A47D20C4C898A6E09398F5 /* CacheHeroLoader.swift */; };
 		E8A47C30E268FABF3091841E /* HeroEndpoint.swift in Resources */ = {isa = PBXBuildFile; fileRef = E8A47AECEDAE0DE05A11B010 /* HeroEndpoint.swift */; };
+		E8A47C88EAA59678B955DADD /* HeroView.swift in Resources */ = {isa = PBXBuildFile; fileRef = E8A4738562CABDED90EE5F3D /* HeroView.swift */; };
+		E8A47DA37139B9D5F993FDA7 /* HeroPresenter.swift in Resources */ = {isa = PBXBuildFile; fileRef = E8A47BC19A124E904D18859D /* HeroPresenter.swift */; };
+		E8A47DD9EAED2A4FEBC58C8D /* HeroController.swift in Resources */ = {isa = PBXBuildFile; fileRef = E8A47172B71C1A0A35AC004A /* HeroController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,10 +30,15 @@
 		AF3E4E972C4CCD4500C942F2 /* HeroIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HeroIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF3E4E992C4CCD4500C942F2 /* HeroIOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeroIOS.h; sourceTree = "<group>"; };
 		E8A4709B23005C6399750C66 /* RemoteHeroLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteHeroLoader.swift; sourceTree = "<group>"; };
+		E8A47172B71C1A0A35AC004A /* HeroController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroController.swift; sourceTree = "<group>"; };
 		E8A472504037755364F5C614 /* HeroMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroMapper.swift; sourceTree = "<group>"; };
+		E8A4738562CABDED90EE5F3D /* HeroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroView.swift; sourceTree = "<group>"; };
+		E8A4773275FED65BAE2529A0 /* HeroRoleCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroRoleCollectionCell.swift; sourceTree = "<group>"; };
 		E8A477C06123008E5D4DE925 /* HeroLoaderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroLoaderFactory.swift; sourceTree = "<group>"; };
 		E8A47881D5AF7C7772B2AB3E /* HeroLoaderComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroLoaderComposite.swift; sourceTree = "<group>"; };
+		E8A47A667DF12F946385A158 /* HeroCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCollectionCell.swift; sourceTree = "<group>"; };
 		E8A47AECEDAE0DE05A11B010 /* HeroEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroEndpoint.swift; sourceTree = "<group>"; };
+		E8A47BC19A124E904D18859D /* HeroPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPresenter.swift; sourceTree = "<group>"; };
 		E8A47C74298F6CCF363FC2A2 /* HeroLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroLoader.swift; sourceTree = "<group>"; };
 		E8A47CD6C40B21D177BFF24D /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		E8A47D20C4C898A6E09398F5 /* CacheHeroLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheHeroLoader.swift; sourceTree = "<group>"; };
@@ -122,8 +132,44 @@
 		AF3E4E9E2C4CCD5000C942F2 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				E8A47285AAF9F8749A851E5A /* Controllers */,
+				E8A47EBE68D66CE0056E1FCE /* Views */,
+				E8A4720C39EE2EB96BC51C4D /* Presenter */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		E8A4720C39EE2EB96BC51C4D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E8A47BC19A124E904D18859D /* HeroPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E8A47285AAF9F8749A851E5A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E8A47172B71C1A0A35AC004A /* HeroController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E8A477AB23BC6680BBF3FB40 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				E8A47CBDB24F25D256B76825 /* Item */,
+				E8A47A667DF12F946385A158 /* HeroCollectionCell.swift */,
+				E8A4773275FED65BAE2529A0 /* HeroRoleCollectionCell.swift */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		E8A47CBDB24F25D256B76825 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Item;
 			sourceTree = "<group>";
 		};
 		E8A47E6C258083854616F1DB /* Model */ = {
@@ -132,6 +178,15 @@
 				E8A47CD6C40B21D177BFF24D /* Hero.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E8A47EBE68D66CE0056E1FCE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E8A4738562CABDED90EE5F3D /* HeroView.swift */,
+				E8A477AB23BC6680BBF3FB40 /* Collection */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +303,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8A47DD9EAED2A4FEBC58C8D /* HeroController.swift in Resources */,
+				E8A47C88EAA59678B955DADD /* HeroView.swift in Resources */,
+				E8A4770C9F8991044188D8D4 /* HeroCollectionCell.swift in Resources */,
+				E8A4727944D83512736B3123 /* HeroRoleCollectionCell.swift in Resources */,
+				E8A47DA37139B9D5F993FDA7 /* HeroPresenter.swift in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +471,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -444,6 +505,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -477,6 +539,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -514,6 +577,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
