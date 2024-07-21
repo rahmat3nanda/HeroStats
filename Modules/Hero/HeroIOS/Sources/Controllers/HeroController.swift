@@ -33,6 +33,7 @@ public class HeroController: UIViewController {
     
     private lazy var heroView: HeroView = {
         let view = HeroView()
+        view.delegate = self
         return view
     }()
     
@@ -45,9 +46,6 @@ public class HeroController: UIViewController {
         let view = ErrorView()
         return view
     }()
-    
-    private var data: [HeroItem]?
-    private var role: [HeroRole]?
     
     public init() {
         super.init(nibName: nil, bundle: nil)
@@ -76,8 +74,9 @@ extension HeroController: HeroControllerProtocol {
     
     public func showData(data: [HeroItem], role: [HeroRole]) {
         viewType = .hero
-        self.data = data
-        self.role = role
+        heroView.data = data
+        heroView.role = role
+        title = "Hero Stat: All"
     }
 }
 
@@ -98,5 +97,11 @@ private extension HeroController {
         case .error:
             setViewIfNeeded(errorView)
         }
+    }
+}
+
+extension HeroController: HeroViewDelegate {
+    func didSelectRole(_ role: HeroRole) {
+        title = "Hero Stat: \(role.rawValue)"
     }
 }
