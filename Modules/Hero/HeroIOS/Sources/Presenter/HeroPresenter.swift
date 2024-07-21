@@ -10,6 +10,7 @@ import Hero
 
 public protocol HeroPresenterProtocol: AnyObject {
     func loadData(skipCache: Bool)
+    func filter(role: HeroRole)
 }
 
 extension HeroPresenterProtocol {
@@ -24,6 +25,7 @@ public class HeroPresenter: HeroPresenterProtocol {
     let loader: HeroLoader
     
     private var data: [HeroItem] = []
+    private var role: [HeroRole] = []
     
     public init(view: HeroControllerProtocol, loader: HeroLoader) {
         self.view = view
@@ -41,10 +43,20 @@ public class HeroPresenter: HeroPresenterProtocol {
             switch result {
             case let .success(data):
                 self.data = data
+                self.role = data.getRole()
                 self.view?.showData(data: data, role: data.getRole())
             case let .failure(error): self.view?.showError(with: error.localizedDescription)
             }
         }
+    }
+    
+    public func filter(role: HeroRole) {
+        if role == .all {
+            view?.showData(data: data, role: self.role)
+            return
+        }
+        
+        view?.showData(data: data.filter({$0.roles.contains(where: {$0.rawValue == role.rawValue})}), role: self.role)
     }
 }
 
