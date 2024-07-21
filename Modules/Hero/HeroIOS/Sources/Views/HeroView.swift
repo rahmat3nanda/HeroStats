@@ -132,6 +132,7 @@ extension HeroView: UICollectionViewDataSource {
         case .hero:
             let cell = collectionView.dequeueReusableCustomCell(with: HeroCollectionCell.self, indexPath: indexPath)
             cell.data = data
+            cell.delegate = self
             return cell
         case .role:
             let cell = collectionView.dequeueReusableCustomCell(with: HeroRoleCollectionCell.self, indexPath: indexPath)

@@ -106,8 +106,8 @@ private extension HeroController {
 }
 
 extension HeroController: HeroViewDelegate {
-    func didSelectHero(_ hero: Hero.HeroItem) {
-        
+    func didSelectHero(_ hero: HeroItem) {
+        print("Select", hero.localizedName)
     }
     
     func didSelectRole(_ role: HeroRole) {

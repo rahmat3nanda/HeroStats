@@ -109,6 +109,6 @@ extension HeroCollectionCell: UICollectionViewDelegateFlowLayout {
 extension HeroCollectionCell: HeroItemCollectionCellDelegate {
     func didSelect(_ cell: HeroItemCollectionCell) {
         guard let indexPath = collectionView.indexPath(for: cell), let item = data[safe: indexPath.item] else { return }
-        self.delegate?.didSelect(item)
+        delegate?.didSelect(item)
     }
 }

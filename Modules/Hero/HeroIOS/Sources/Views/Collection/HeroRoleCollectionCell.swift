@@ -97,6 +97,6 @@ extension HeroRoleCollectionCell: UICollectionViewDelegateFlowLayout {
 extension HeroRoleCollectionCell: HeroRoleItemCollectionCellDelegate {
     func didSelect(_ cell: HeroRoleItemCollectionCell) {
         guard let indexPath = collectionView.indexPath(for: cell), let role = data[safe: indexPath.item] else { return }
-        self.delegate?.didSelect(role)
+        delegate?.didSelect(role)
     }
 }
