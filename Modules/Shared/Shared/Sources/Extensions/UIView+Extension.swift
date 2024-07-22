@@ -1,5 +1,5 @@
 //
-//  UIView+Constraint.swift
+//  UIView+Extension.swift
 //  Shared
 //
 //  Created by Rahmat Trinanda Pramudya Amar on 22/07/24.
@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+// MARK: - Constraint
 public extension UIView {
     func removeAllConstraints() {
         var _superview = self.superview
@@ -28,5 +30,15 @@ public extension UIView {
         
         self.removeConstraints(self.constraints)
         self.translatesAutoresizingMaskIntoConstraints = true
+    }
+}
+
+
+public extension UIView {
+    func addSubviews(_ views: [UIView]) {
+        views.forEach({
+            self.addSubview($0)
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        })
     }
 }

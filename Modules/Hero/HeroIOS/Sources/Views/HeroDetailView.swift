@@ -19,9 +19,7 @@ class HeroDetailView: UIView {
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
         view.layer.cornerRadius = 8
-        
-        view.image = UIImage(systemName: "wifi.slash")
-        view.backgroundColor = .black
+        view.tintColor = .black
         
         return view
     }()
@@ -59,6 +57,15 @@ class HeroDetailView: UIView {
         return label
     }()
     
+    private lazy var recomLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .black
+        label.font = .systemFont(ofSize: 16, weight: .semibold)
+        
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configUI()
@@ -76,6 +83,7 @@ extension HeroDetailView {
         primaryAttrLabel.text = "Attribute: \(hero.primaryAttr.rawValue)"
         attackTypeLabel.text = "Attack Type: \(hero.attackType.rawValue)"
         rolesLabel.text = "Roles: \(hero.roles.map({ $0.rawValue }).joined(separator: ", "))"
+        recomLabel.text = recommendations.isEmpty ? "" : "Recommendations"
         
         if let url = URL(string: "\(APIConstants.instance.imageBaseUrl)\(hero.img)") {
             imageView.kf.setImage(
@@ -114,6 +122,10 @@ extension HeroDetailView {
             rolesLabel.anchors.trailing.equal(safeAreaLayoutGuide.anchors.trailing, constant: -12)
             rolesLabel.anchors.top.equal(attackTypeLabel.anchors.bottom, constant: 4)
             
+            recomLabel.anchors.leading.equal(safeAreaLayoutGuide.anchors.leading, constant: 12)
+            recomLabel.anchors.trailing.equal(safeAreaLayoutGuide.anchors.trailing, constant: -12)
+            recomLabel.anchors.top.equal(rolesLabel.anchors.bottom, constant: 16)
+            
             return
         }
         
@@ -138,6 +150,10 @@ extension HeroDetailView {
         rolesLabel.anchors.leading.equal(imageView.anchors.trailing, constant: 12)
         rolesLabel.anchors.trailing.equal(safeAreaLayoutGuide.anchors.trailing, constant: -12)
         rolesLabel.anchors.top.equal(attackTypeLabel.anchors.bottom, constant: 4)
+        
+        recomLabel.anchors.leading.equal(imageView.anchors.trailing, constant: 12)
+        recomLabel.anchors.trailing.equal(safeAreaLayoutGuide.anchors.trailing, constant: -12)
+        recomLabel.anchors.top.equal(rolesLabel.anchors.bottom, constant: 16)
     }
 }
 
@@ -146,11 +162,7 @@ private extension HeroDetailView {
     func configUI() {
         backgroundColor = .white
         
-        addSubview(imageView)
-        addSubview(nameLabel)
-        addSubview(primaryAttrLabel)
-        addSubview(attackTypeLabel)
-        addSubview(rolesLabel)
+        addSubviews([imageView, nameLabel, primaryAttrLabel, attackTypeLabel, rolesLabel, recomLabel])
         setupConstraints()
     }
 }
