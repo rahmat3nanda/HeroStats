@@ -37,4 +37,9 @@ public class HeroDetailController: UIViewController {
         title = hero.localizedName
         mainView.setData(hero, recommendations: recommendations)
     }
+    
+    public override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        mainView.setupConstraints()
+    }
 }
