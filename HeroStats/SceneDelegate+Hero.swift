@@ -18,8 +18,17 @@ extension SceneDelegate {
         let loader = MainQueueDispatchDecorator(decoratee: HeroLoaderFactory.create())
         let presenter = HeroPresenter(view: controller, loader: loader)
         controller.presenter = presenter
+        controller.delegate = self
         
         return controller
+    }
+}
+
+extension SceneDelegate: HeroControllerDelegate {
+    func didSelect(_ hero: HeroItem, recomendations: [HeroItem]) {
+        let target = HeroDetailController(hero: hero, recommendations: recomendations)
+        target.bindNavigationBar()
+        navigationController.pushViewController(target, animated: true)
     }
 }
 
