@@ -126,6 +126,7 @@ extension HeroController: HeroViewDelegate {
     
     func didSelectHero(_ hero: HeroItem) {
         print("Select", hero.localizedName)
+        presenter?.recommendations(for: hero)
     }
     
     func didSelectRole(_ role: HeroRole) {
