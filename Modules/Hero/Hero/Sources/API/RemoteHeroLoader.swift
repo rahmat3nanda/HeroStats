@@ -21,7 +21,7 @@ class RemoteHeroLoader: HeroLoader {
     }
     
     func load(skipCache: Bool, completion: @escaping (Result) -> Void) {
-        let request = HeroEndpoint.data.url(baseURL: baseUrl)
+        let request = baseUrl.build()
         
         Task {
             do {
@@ -40,5 +40,16 @@ class RemoteHeroLoader: HeroLoader {
         } catch {
             return .failure(error)
         }
+    }
+}
+
+fileprivate extension URL {
+    func build() -> URLRequest {
+        var components = URLComponents()
+        components.scheme = scheme
+        components.host = host
+        components.path = path + "/herostats"
+        
+        return URLRequest(url: components.url!)
     }
 }
