@@ -19,6 +19,7 @@ public protocol HeroControllerProtocol: AnyObject {
     func showNoInternet()
     func showError(with message: String)
     func showData(data: [HeroItem], role: [HeroRole])
+    func showRecomendations(for hero: HeroItem, data: [HeroItem])
 }
 
 public protocol HeroControllerDelegate: AnyObject {
@@ -91,6 +92,10 @@ extension HeroController: HeroControllerProtocol {
         heroView.data = data
         heroView.role = role
         title = "Hero Stat: All"
+    }
+    
+    public func showRecomendations(for hero: HeroItem, data: [HeroItem]) {
+        delegate?.didSelect(hero, recomendations: data)
     }
 }
 
