@@ -29,6 +29,7 @@
 		AF3E4EDC2C4D510E00C942F2 /* HeroItemCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4EDB2C4D510E00C942F2 /* HeroItemCollectionCell.swift */; };
 		AF3E4EDF2C4D533900C942F2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AF3E4EDE2C4D533900C942F2 /* Kingfisher */; };
 		AF3E4EE32C4E4A5A00C942F2 /* HeroDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4EE22C4E4A5A00C942F2 /* HeroDetailView.swift */; };
+		AF3E4EE52C4E4CE300C942F2 /* HeroDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E4EE42C4E4CE300C942F2 /* HeroDetailController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		AF3E4ED72C4D493000C942F2 /* HeroRoleItemCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroRoleItemCollectionCell.swift; sourceTree = "<group>"; };
 		AF3E4EDB2C4D510E00C942F2 /* HeroItemCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroItemCollectionCell.swift; sourceTree = "<group>"; };
 		AF3E4EE22C4E4A5A00C942F2 /* HeroDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailView.swift; sourceTree = "<group>"; };
+		AF3E4EE42C4E4CE300C942F2 /* HeroDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				AF3E4ECC2C4CD40100C942F2 /* HeroController.swift */,
+				AF3E4EE42C4E4CE300C942F2 /* HeroDetailController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				AF3E4ED12C4CD45600C942F2 /* HeroPresenter.swift in Sources */,
 				AF3E4EE32C4E4A5A00C942F2 /* HeroDetailView.swift in Sources */,
 				AF3E4ED32C4CD71500C942F2 /* HeroCollectionCell.swift in Sources */,
+				AF3E4EE52C4E4CE300C942F2 /* HeroDetailController.swift in Sources */,
 				AF3E4ECF2C4CD41000C942F2 /* HeroView.swift in Sources */,
 				AF3E4ECD2C4CD40100C942F2 /* HeroController.swift in Sources */,
 				AF3E4EDC2C4D510E00C942F2 /* HeroItemCollectionCell.swift in Sources */,
