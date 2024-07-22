@@ -11,6 +11,7 @@ import Hero
 public protocol HeroPresenterProtocol: AnyObject {
     func loadData(skipCache: Bool)
     func filter(role: HeroRole)
+    func recommendations(for hero: HeroItem)
 }
 
 extension HeroPresenterProtocol {
@@ -57,6 +58,31 @@ public class HeroPresenter: HeroPresenterProtocol {
         }
         
         view?.showData(data: data.filter({$0.roles.contains(where: {$0.rawValue == role.rawValue})}), role: self.role)
+    }
+    
+    public func recommendations(for hero: HeroItem) {
+        if hero.primaryAttr == .agi {
+            let sorted = data.sorted(by: { $0.moveSpeed > $1.moveSpeed })
+            let highest3 = Array(sorted.prefix(3))
+            view?.showRecomendations(for: hero, data: highest3)
+            return
+        }
+        
+        if hero.primaryAttr == .str {
+            let sorted = data.sorted(by: { $0.baseAttackMax > $1.baseAttackMax })
+            let highest3 = Array(sorted.prefix(3))
+            view?.showRecomendations(for: hero, data: highest3)
+            return
+        }
+        
+        if hero.primaryAttr == .int {
+            let sorted = data.sorted(by: { $0.baseMana > $1.baseMana })
+            let highest3 = Array(sorted.prefix(3))
+            view?.showRecomendations(for: hero, data: highest3)
+            return
+        }
+        
+        view?.showRecomendations(for: hero, data: [])
     }
 }
 
