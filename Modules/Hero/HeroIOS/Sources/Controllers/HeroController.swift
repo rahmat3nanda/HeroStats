@@ -21,9 +21,14 @@ public protocol HeroControllerProtocol: AnyObject {
     func showData(data: [HeroItem], role: [HeroRole])
 }
 
+public protocol HeroControllerDelegate: AnyObject {
+    func didSelect(_ hero: HeroItem, recomendations: [HeroItem])
+}
+
 public class HeroController: UIViewController {
     
     public var presenter: HeroPresenterProtocol?
+    public weak var delegate: HeroControllerDelegate?
     
     private var viewType: HeroControllerViewType = .hero {
         didSet {
