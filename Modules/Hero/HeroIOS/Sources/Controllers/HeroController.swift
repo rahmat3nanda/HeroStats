@@ -63,7 +63,7 @@ public class HeroController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         title = "Hero Stat"
-        presenter?.loadData()
+        presenter?.loadData(skipCache: false)
     }
     
     public override func viewDidLayoutSubviews() {
@@ -110,6 +110,10 @@ private extension HeroController {
 }
 
 extension HeroController: HeroViewDelegate {
+    func didRefresh() {
+        presenter?.loadData()
+    }
+    
     func didSelectHero(_ hero: HeroItem) {
         print("Select", hero.localizedName)
     }

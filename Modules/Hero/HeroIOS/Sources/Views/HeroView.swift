@@ -21,6 +21,7 @@ fileprivate enum HeroCollectionViewSection: Int {
 }
 
 protocol HeroViewDelegate: AnyObject {
+    func didRefresh()
     func didSelectRole(_ role: HeroRole)
     func didSelectHero(_ hero: HeroItem)
 }
@@ -98,6 +99,7 @@ private extension HeroView {
     }
     
     @objc private func handleRefresh() {
+        delegate?.didRefresh()
         refreshControl.endRefreshing()
     }
     
