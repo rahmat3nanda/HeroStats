@@ -55,11 +55,15 @@ public class HeroController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    public override func loadView() {
+        super.loadView()
+        view = heroView
+    }
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
-        view = heroView
         title = "Hero Stat"
-        presenter?.loadData(skipCache: false)
+        presenter?.loadData()
     }
     
     public override func viewDidLayoutSubviews() {
